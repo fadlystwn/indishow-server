@@ -1,0 +1,17 @@
+<%=  form_with model: @artists do |f|%>
+  <div>
+    <%= f.label :title%>
+    <%= f.text_field :title%>
+  </div>    
+  <div>
+    <%= f.label :genre%>
+    <%= f.text_field :genre%>
+  </div>    
+  <div>
+    <%= f.label :bio%>
+    <%= f.text_area :bio%>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
