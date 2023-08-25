@@ -3,10 +3,16 @@ class ArtistsController < ApplicationController
  
   def index
     @artists = Artist.all
+    @albums_by_artist = {}
+    
+    @artists.each do |artist|
+      @albums_by_artist[artist.id] = artist.albums
+    end
   end
   
   def show
     @artist = Artist.find(params[:id])
+    @albums = @artist.albums
   end
 
   def new
