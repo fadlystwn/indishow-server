@@ -1,2 +1,9 @@
-<h1><%= @artist.name %> </h1>
-<p><strong>Bio:</strong> <%= @artist.bio%>  </p>
+<h1><%= @artist.name %></h1>
+
+<% if @artist.profile_picture.attached? %>
+  <%= image_tag @artist.profile_picture, width: 300 %>
+<% else %>
+  <p>No profile picture available.</p>
+<% end %>
+
+<p><strong>Bio:</strong> <%= @artist.bio %></p>

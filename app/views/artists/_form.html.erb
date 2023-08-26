@@ -4,12 +4,20 @@
     <%= f.text_field :name%>
   </div>    
   <div>
+    <%= f.label :username%>
+    <%= f.text_field :username%>
+  </div>    
+  <div>
     <%= f.label :genre%>
     <%= f.text_field :genre%>
   </div>    
   <div>
     <%= f.label :bio%>
     <%= f.text_area :bio%>
+  </div>
+  <div>
+    <%= f.label :profile_picture, 'Profile Picture' %>
+    <%= f.file_field :profile_picture %>
   </div>
   <div>
     <%= f.submit %>
