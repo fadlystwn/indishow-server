@@ -4,4 +4,9 @@ class ArtistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  test "should not save the artist without title" do
+    artist = Artist.new
+    assert_not artist.save
+  end
 end
