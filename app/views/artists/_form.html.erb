@@ -12,6 +12,10 @@
     <%= f.text_area :bio%>
   </div>
   <div>
+    <%= f.label :profile_picture, 'Profile Picture' %>
+    <%= f.file_field :profile_picture %>
+  </div>
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
