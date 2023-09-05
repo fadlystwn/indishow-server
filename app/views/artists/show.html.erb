@@ -7,3 +7,13 @@
 <% end %>
 
 <p><strong>Bio:</strong> <%= @artist.bio %></p>
+
+<h2>Album</h2>
+
+<% @albums.each do |album|%>
+<p>
+  <%= album.title%>
+  <%= album.release_date%>
+</p>
+
+<%end%>
