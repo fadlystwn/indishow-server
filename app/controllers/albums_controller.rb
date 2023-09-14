@@ -1,30 +1,27 @@
 class AlbumsController < ApplicationController
-  before_action :set_artist, only: [:index, :new, :create]
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+    before_action :set_artist, only: [:index, :new, :create]
+    before_action :set_album, only: [:show, :edit, :update, :destroy]
 
-
-  def index
-    @albums = @artist.albums
-  end
-
-  def show
-
-  end
-
-  def new
-    @artist = Artist.find(params[:artist_id])
-    @album = @artist.albums.new
-
-  end
-
-  def create
-    @album = @artist.albums.new(album_params)
-    if@album.save
-      redirect_to artist_albums_path(@artist, @album), notice: 'Album was succesfully created!'
-    else
-      render :new
+    def index
+      @albums = @artist.albums
     end
-  end
+
+    def show
+      @album = Album.find(params[:id])
+    end
+
+    def new
+      @album = @artist.albums.new
+    end
+
+    def create
+      @album = @artist.albums.new(album_params)
+      if @album.save
+        redirect_to artist_albums_path(@artist), notice: 'Album was successfully created!'
+      else
+        render :new
+      end
+    end
 
   private
 
@@ -33,7 +30,7 @@ class AlbumsController < ApplicationController
   end
 
   def set_album
-    @album = Album.find(params[:artist_id])
+    @album = Album.find(params[:id])
   end
 
   def album_params

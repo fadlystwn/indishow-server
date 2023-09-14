@@ -1,3 +1,8 @@
-<%= @albums.each do |album| %>
-  <p><%= album.title%>
-<%end%>
+<h1>Albums by <%= @artist.name %></h1>
+
+<% @albums.each do |album| %>
+  <div>
+    <h2><%= album.title %></h2>
+    <p>Release Date: <%= album.release_date %></p>
+  </div>
+<% end %>
